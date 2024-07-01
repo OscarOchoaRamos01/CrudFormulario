@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD_Form</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Formulario</h1>
+    <form id="user-form" action="/users" method="post">
+      <input type="text" id="name" placeholder="Nombre" required>
+      <input type="text" id="first_name" placeholder="Apellido" required>
+      <input type="text" id="dni" placeholder="DNI" required>
+
+      <div class="gender-options">
+        <span class="gender-option-label">Género:</span>
+        <select id="gender-select" required>
+          <option value="">Seleccionar Género</option>
+          <option value="M">Masculino</option>
+          <option value="F">Femenino</option>
+          <option value="O">Otro</option>
+        </select>
+        <label><input type="radio" name="gender" value="P"> Prefiero no decir</label>
+      </div>
+
+      <label for="birthdate">Fecha de Nacimiento:</label>
+      <input type="date" id="birthdate" name="birthdate" required>
+      <button type="submit">Ingresar un Usuario</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>DNI</th>
+          <th>Género</th>
+          <th>Fecha de Nacimiento</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="user-table-body">
+      </tbody>
+    </table>
+  </div>
+
+  <script src="/validacion.js"></script> <!-- Ruta al JavaScript -->
+
+</body>
+
+</html>
